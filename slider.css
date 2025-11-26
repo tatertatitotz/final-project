@@ -1,0 +1,12 @@
+/*Sets the maximum size for the slider container*/
+.slidecontainer{
+}
+/*Sets the color of the slider*/
+.slider {
+}
+/*On hover the visual changes*/
+.slider:hover {
+}
+/*Changes the grab icon for the slider*/
+.slider::-webkit-slider-thumb {
+}
