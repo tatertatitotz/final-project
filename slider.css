@@ -1,14 +1,16 @@
 /*Sets the maximum size for the slider container*/
 .slidecontainer{
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 /*Sets the color of the slider*/
 .slider {
     appearance: none;
-    width: 75%;
+    width: 87%;
     height: 15px;
     border-radius: 20px;
-    background: #6e83db;
+    background: #8a9bdf;
     outline: none;
     opacity: 0.7;
 }
@@ -22,5 +24,5 @@
     width: 20px;
     height: 20px;
     border-radius: 30px;
-    background: #372655;
+    background: #000000;
 }
