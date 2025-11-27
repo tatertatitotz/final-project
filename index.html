@@ -37,6 +37,9 @@
             <p class="col box"></p>
             <p class="col box"></p>
             <p class="col box"></p>
+            <button class="btn btn-primary" onclick="newQuestion(), saveAnswer()">
+                Next Question
+            </button>
         </div>
         <div class="slidecontainer">
             <input type="range" min="1" max="5" class="slider" id="myRange">
@@ -50,6 +53,13 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        //when the Next Question button is clicked, the Coding Language changes.
+        function newQuestion() {
+            var skill = document.getElementById("skill");
+            if (skill.innerHTML == "HTML") skill.innerHTML = "CSS";
+            else if (skill.innerHTML == "CSS") skill.innerHTML = "Bootstrap 5";
+            else if (skill.innerHTML == "Bootstrap 5") skill.innerHTML = "Python";
+            else if (skill.innerHTML == "Python") skill.innerHTML = "Javascript";
     </script>
 </body>
 
