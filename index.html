@@ -14,26 +14,22 @@
 </head>
 
 <body>
-<div id="nav-placeholder"></div>
-<main class="container p-3">
-     
-     <div class="box p-4 m-3">
-        <h3 class="p-1">How proficient are you in</h3>
-        <div class="row">
-            <p class="col">No Knowledge</p>
-            <p class="col"></p>
-            <p class="col"></p>
-            <p class="col"></p>
-            <p class="col">Extremely Knowledgeable</p>
-        <h3 class="p-1 ">How proficient are you in</h3>
-        <div class="row box" id="message" class="alert">
-            <p class="col box" id="message"></p>
-            <p class="col box"></p>
-            <p class="col box"></p>
-            <p class="col box"></p>
-            <p class="col box"></p>
+    <div id="nav-placeholder"></div>
+    <main class="container p-3">
+        <div class="box p-4 m-3">
+            <h3 class="p-1">
+                How proficient are you in <mark id="skill">HTML</mark>
+            </h3>
+            <div class="row box" id="message" class="alert">
+                <p class="col answer" ondrop="">None</p>
+                <p class="col answer">Little knowledge</p>
+                <p class="col answer">Medium</p>
+                <p class="col answer">Near proficient</p>
+                <p class="col answer">Mastery</p>
                 <div class="slidecontainer p-4" style="align-self: center">
                     <input type="range" min="1" max="5" class="slider" id="myRange" ondrag="rangeMessage()" />
+                </div>
+            </div>
             <button class="btn btn-primary" onclick="newQuestion(), saveAnswer()">
                 Next Question
             </button>
