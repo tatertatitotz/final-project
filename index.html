@@ -20,13 +20,17 @@
             <h3 class="p-1">
                 How proficient are you in <mark id="skill">HTML</mark>
             </h3>
-            <div class="row answer">
-                <p class="col answer" id="answer1">No Experience</p>
-                <p class="col answer">B</p>
-                <p class="col answer">Medium Proficiency</p>
-                <p class="col answer">D</p>
-                <p class="col answer">Extremly Proficient</p>
-                <div class="slidecontainer p-4" style="justify-content: auto; opacity: 1;">
+            <div class="answer">
+            <div class="row" style="opacity: 0.5;">
+                <p class="col answer" value="1">No Experience</p>
+                <p class="col answer" value="2">B</p>
+                <p class="col answer" value="3">Medium Proficiency</p>
+                <p class="col answer" value="4">D</p>
+                <p class="col answer" value="5">Extremly Proficient</p>
+                
+                <p>Value: <span id="demo"></span></p>
+            </div>
+            <div class="slidecontainer p-4" style="justify-content: auto;">
                     <input type="range" min="1" max="5" value="3" class="slider" id="myRange"/>
                     
                 </div>
@@ -50,8 +54,9 @@
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function answerHighlight() {
             output.innerHTML = this.value;
-            if (slider.value = 1)
-                document.getElementById("answer1").style.opacity = 0.5;
+            slider.value = 
+            if (value = "1")
+                document.style.opacity = 1;
         }
 
         //when the Next Question button is clicked, the Coding Language changes.
