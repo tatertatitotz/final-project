@@ -80,9 +80,19 @@ body {
 
 /* Custom container for the text tied to the slider */
 .answer {
+  /* Changes the color of the container background */
+  /* ========= \/ == The color is assigned to the variable, --surface. It is defined at line 9 */
   background: var(--surface);
+  /* === \/ == The text color of things assigned the class="answer", is now --text. Line 7 */
   color: var(--text);
+  /* =============== \/ == The border is 1px large, solid (not dotted, not dashed). Color @ line 26. */
   border: 1px solid var(--border);
+  /* Padding is the space contained within the border of the container, here it is 2rem */
+  padding: 2rem;
+  /* Margin is the space outside of the border. */
+  margin-block: 1rem;
+  /* All text with the class="answer", or within a div with this class, will be centered.*/
+  text-align: center;
 }
 
 /* List group inside light surfaces */
