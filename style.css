@@ -78,6 +78,13 @@ body {
   padding: 1rem;
 }
 
+/* Custom container for the text tied to the slider */
+.answer {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
 /* List group inside light surfaces */
 .list-group,
 .list-group-item {
@@ -114,3 +121,4 @@ a.btn {
   background-color: var(--accent-hover);
   border-color: var(--accent-hover);
 }
+
