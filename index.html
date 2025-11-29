@@ -71,7 +71,20 @@
         output.innerHTML = this.value;
         // slider.value is the position in which the DOT on the slider follows visually and value wise.
         // In essence... ALWAYS COMPARE slider.value to an integar, do not ASSIGN.
-            if (slider.value == 1);
+        if (slider.value == 1);
+      };
+      function moreInformation() {
+        var text1 = document.getElementById("answer1");
+        var text2 = document.getElementById("answer2");
+        var text3 = document.getElementById("answer3");
+        var text4 = document.getElementById("answer4");
+        var text5 = document.getElementById("answer5");
+        if (text1.innerHTML == "No Experience") {
+            text1.innerHTML = "You've never looked at the language before.";
+            text2.innerHTML = "You can look at it and understand the basics, do some minimal coding.";
+            text3.innerHTML = "You can code some things with minimal help.";
+            text4.innerHTML = "Can do pretty much anything with the language if tasked to. May have to research some topics.";
+            text5.innerHTML = "Barely needs to look at documentation to complete a task.";
         }
 
       function saveAnswer() {
