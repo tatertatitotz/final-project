@@ -1,88 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <link href="style.css" rel="stylesheet" />
     <link href="slider.css" rel="stylesheet" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="nav-placeholder"></div>
     <main class="container p-3">
-        <div class="box p-4 m-3">
-            <h3 class="p-1">
-                How proficient are you in <mark id="skill">HTML</mark>
-            </h3>
-            <div class="answer">
-            <div class="row">
-                <p class="col answer" id="answer1">No Experience</p>
-                <p class="col answer" id="answer2">B</p>
-                <p class="col answer" id="answer3">Medium Proficiency</p>
-                <p class="col answer" id="answer4">D</p>
-                <p class="col answer" id="answer5">Extremly Proficient</p>
-                
-                <p>Value: <span id="demo"></span></p>
-            </div>
-            <div class="slidecontainer p-4" style="justify-content: auto;">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="myRange"/>
-                    
-                </div>
-            </div>
+      <div class="box p-4 m-3">
+        <h3 class="p-1">
+          How proficient are you in <mark id="skill">HTML</mark>
+        </h3>
+        <div class="answer">
+          <div class="row">
+            <p class="col answer" id="answer1">No Experience</p>
+            <p class="col answer" id="answer2">Beginner Knowledge</p>
+            <p class="col answer" id="answer3">Moderate Proficiency</p>
+            <p class="col answer" id="answer4">Almost Mastered</p>
+            <p class="col answer" id="answer5">Mastered</p>
 
-            <button class="btn btn-primary d-block mx-auto" onclick="newQuestion(), saveAnswer()" id="button">
-                Next Question
-            </button>
+            <p>Value: <span id="demo"></span></p>
+            <button class="btn btn-primary d-block mx-auto" onclick="moreInformation()">More Specific Answer Button!</button>
+          </div>
+          <div class="slidecontainer p-4" style="justify-content: auto">
+            <input
+              type="range"
+              min="1"
+              max="5"
+              value="3"
+              class="slider"
+              id="myRange"
+            />
+          </div>
         </div>
+
+        <button
+          class="btn btn-primary d-block mx-auto"
+          onclick="newQuestion(), saveAnswer()"
+          id="button"
+        >
+          Next Question
+        </button>
+      </div>
     </main>
     <script>
-        // Load only the #site-nav element
-        $("#nav-placeholder").load("navbar.html #site-nav");
+      // Load only the #site-nav element
+      $("#nav-placeholder").load("navbar.html #site-nav");
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value; // Display the default slider value
 
-        var slider = document.getElementById("myRange");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value; // Display the default slider value
+      // Update the current slider value (each time you drag the slider handle)
+      const section = document.getElementsByClassName("row");
 
-        // Update the current slider value (each time you drag the slider handle)
-        const section = document.getElementsByClassName("row")
-
-        slider.oninput = function answerHighlight() {
-            output.innerHTML = this.value;
+      slider.oninput = function answerHighlight() {
+        output.innerHTML = this.value;
         // slider.value is the position in which the DOT on the slider follows visually and value wise.
         // In essence... ALWAYS COMPARE slider.value to an integar, do not ASSIGN.
             if (slider.value == 1);
         }
 
-         function saveAnswer() {
-             if (skill.innerHTML == "HTML")
-                 slider.value = html.Save
-             else if (skill.innerHTML == "CSS")
-                 slider.value = css.Save
-            //else if ()
-         }
+      function saveAnswer() {
+        if (skill.innerHTML == "HTML") slider.value = html.Save;
+        else if (skill.innerHTML == "CSS") slider.value = css.Save;
+        //else if ()
+      }
 
-        //when the Next Question button is clicked, the Coding Language changes.
-        function newQuestion() {
-            var skill = document.getElementById("skill");
-            if (skill.innerHTML == "HTML") skill.innerHTML = "CSS";
-            else if (skill.innerHTML == "CSS") skill.innerHTML = "Bootstrap 5";
-            else if (skill.innerHTML == "Bootstrap 5") skill.innerHTML = "Python";
-            else if (skill.innerHTML == "Python") skill.innerHTML = "Javascript", document.getElementById("button").innerHTML = "End Test"
-            else 
-             window.open("results.html")
-               
-        }
-        
+      //when the Next Question button is clicked, the Coding Language changes.
+      function newQuestion() {
+        var skill = document.getElementById("skill");
+        if (skill.innerHTML == "HTML") skill.innerHTML = "CSS";
+        else if (skill.innerHTML == "CSS") skill.innerHTML = "Bootstrap 5";
+        else if (skill.innerHTML == "Bootstrap 5") skill.innerHTML = "Python";
+        // Changes button text to "End Test" when the Python question is asked.
+        else if (skill.innerHTML == "Python")
+          (skill.innerHTML = "Javascript"),
+            (document.getElementById("button").innerHTML = "End Test");
+        // After the "End Test" button is present, a new html doc opens with the results.
+        else window.open("results.html");
+      }
     </script>
-</body>
-
+  </body>
 </html>
