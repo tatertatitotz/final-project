@@ -107,12 +107,16 @@
       //when the Next Question button is clicked, the Coding Language changes.
       function newQuestion() {
         var skill = document.getElementById("skill");
+        //if the skill displayed is "HTML" it switches to the skill to "CSS"
         if (skill.innerHTML == "HTML") skill.innerHTML = "CSS";
+        //if the skill displayed is "CSS" it switches to the skill to "Bootstrap 5"
         else if (skill.innerHTML == "CSS") skill.innerHTML = "Bootstrap 5";
+        //if the skill displayed is "Bootstrap 5" it switches to the skill to "Python"
         else if (skill.innerHTML == "Bootstrap 5") skill.innerHTML = "Python";
-        // Changes button text to "End Test" when the Python question is asked.
+        // if the skill displayed is Python
         else if (skill.innerHTML == "Python")
           (skill.innerHTML = "Javascript"),
+        // then the button text changes to END TEST
             (document.getElementById("button").innerHTML = "End Test");
         // After the "End Test" button is present, a new html doc opens with the results.
         else window.open("results.html");
