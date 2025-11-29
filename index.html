@@ -62,6 +62,14 @@
             if (slider.value == 1);
         }
 
+         function saveAnswer() {
+             if (skill.innerHTML == "HTML")
+                 slider.value = html.Save
+             else if (skill.innerHTML == "CSS")
+                 slider.value = css.Save
+            //else if ()
+         }
+
         //when the Next Question button is clicked, the Coding Language changes.
         function newQuestion() {
             var skill = document.getElementById("skill");
