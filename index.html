@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary d-block mx-auto" onclick="newQuestion(), saveAnswer()">
+            <button class="btn btn-primary d-block mx-auto" onclick="newQuestion(), saveAnswer()" id="button">
                 Next Question
             </button>
         </div>
@@ -47,24 +47,19 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
         output.innerHTML = slider.value; // Display the default slider value
 
         // Update the current slider value (each time you drag the slider handle)
         const section = document.getElementsByClassName("row")
-        
+
         slider.oninput = function answerHighlight() {
             output.innerHTML = this.value;
         // slider.value is the position in which the DOT on the slider follows visually and value wise.
         // In essence... ALWAYS COMPARE slider.value to an integar, do not ASSIGN.
-            if (slider.value == 1)
-                document.getElementById("answer1").style.opacity = 1;
-            else
-             
-                section.style.opacity= 0.5;
-
-            
+            if (slider.value == 1);
         }
 
         //when the Next Question button is clicked, the Coding Language changes.
